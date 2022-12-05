@@ -22,7 +22,7 @@ const { conn } = require('./src/db.js');
 const { getRol } = require('./src/utils/getRol.js');
 
 const {
-  PORT, 
+  DB_PORT, 
 } = process.env;
  
 // Syncing all the models at once.
