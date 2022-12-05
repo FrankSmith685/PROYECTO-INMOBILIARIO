@@ -18,12 +18,12 @@ const {
 let sequelize =
   process.env.NODE_ENV === "production"
     ? new Sequelize({
-        database: DB_NAME,
+        database: "railway",
         dialect: "postgres",
-        host: DB_HOST,
-        port: DB_PORT,
-        username: DB_USER,
-        password: DB_PASSWORD,
+        host: "containers-us-west-146.railway.app",
+        port: 5601,
+        username: "postgres",
+        password: "NsRommDhJpJpRQibdVK1",
         pool: {
           max: 3,
           min: 1,
@@ -40,7 +40,7 @@ let sequelize =
         ssl: true,
       })
     : new Sequelize(
-        `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
+        `postgresql://postgres:NsRommDhJpJpRQibdVK1@containers-us-west-146.railway.app:5601/railway`,
         { logging: false, native: false } 
       );
 

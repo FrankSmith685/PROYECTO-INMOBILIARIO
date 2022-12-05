@@ -21,13 +21,13 @@ const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
 const { getRol } = require('./src/utils/getRol.js');
 
-const {
-  DB_PORT, 
-} = process.env;
+// const {
+//   DB_PORT, 
+// } = process.env;
  
 // Syncing all the models at once.
 conn.sync({ force: true }).then(() => {
-  server.listen(DB_PORT, async() => {
+  server.listen(5601, async() => {
      await getRol();
     console.log('%s listening at 3001'); // eslint-disable-line no-console
   });
